@@ -1,13 +1,20 @@
 import React from "react";
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
+import { appWithTranslation } from "../i18n";
+import App from "next/app";
 import { AppProps } from "next/app";
 
-function App({ Component, pageProps }: AppProps): React.ReactNode {
+const LearnrApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider>
       <CSSReset />
       <Component {...pageProps} />
     </ThemeProvider>
   );
-}
-export default App;
+};
+
+LearnrApp.getInitialProps = async (appContext: any) => ({
+  ...(await App.getInitialProps(appContext)),
+});
+
+export default appWithTranslation(LearnrApp);

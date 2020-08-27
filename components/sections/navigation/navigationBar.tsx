@@ -4,10 +4,11 @@
  */
 import { useState } from "react";
 import { Box, Flex, Heading, Button } from "@chakra-ui/core";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "../../elements/links";
 
-// Note: This code could be better, so I'd recommend you to understand how I solved and you could write yours better :)
 const Nav = () => {
+  const { t } = useTranslation("common");
   const [show, setShow] = useState(false);
   const handleToggle = () => setShow(!show);
 
@@ -45,9 +46,9 @@ const Nav = () => {
         alignItems="center"
         flexGrow={1}
       >
-        <NavLink to="/">Docs</NavLink>
-        <NavLink to="/">Examples</NavLink>
-        <NavLink to="/">Blog</NavLink>
+        <NavLink to="/">{t("home")}</NavLink>
+        <NavLink to="/">{t("about")}</NavLink>
+        <NavLink to="/">{t("contact")}</NavLink>
       </Box>
 
       <Box
