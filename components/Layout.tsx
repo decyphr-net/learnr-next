@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
-import Nav from "./elements/navigation/navigationBar";
+import Nav from "./sections/navigation/navigationBar";
+import Footer from "./sections/footer/footer";
 
 type Props = {
   children?: ReactNode;
@@ -18,10 +19,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <Nav />
     </header>
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
+    <Footer />
   </div>
 );
 
