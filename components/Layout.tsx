@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
+import { SimpleGrid } from "@chakra-ui/core";
 import Nav from "./sections/navigation/navigationBar";
 import Footer from "./sections/footer/footer";
 
@@ -18,7 +19,9 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     <header>
       <Nav />
     </header>
-    {children}
+    <SimpleGrid columns={1} spacing={"1.75rem"}>
+      {children}
+    </SimpleGrid>
     <Footer />
   </div>
 );

@@ -11,3 +11,8 @@ export interface INavLinkProps {
   children: ReactNode;
   to: string;
 }
+
+export interface IModulePanelProps {
+  title: string;
+  description: string;
+}
