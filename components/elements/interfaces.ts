@@ -15,4 +15,5 @@ export interface INavLinkProps {
 export interface IModulePanelProps {
   title: string;
   description: string;
+  location: string;
 }

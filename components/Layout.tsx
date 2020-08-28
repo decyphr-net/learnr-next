@@ -19,7 +19,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     <header>
       <Nav />
     </header>
-    <SimpleGrid columns={1} spacing={"1.75rem"}>
+    <SimpleGrid columns={1} spacing={"1.75rem"} m={"12.5%"}>
       {children}
     </SimpleGrid>
     <Footer />
