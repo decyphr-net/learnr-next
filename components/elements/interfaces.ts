@@ -18,6 +18,11 @@ export interface IModulePanelProps {
   location: string;
 }
 
+export interface IUnitPanelProps {
+  title: string;
+  children: ReactNode;
+}
+
 export interface IHeadingProps {
   text: string;
 }

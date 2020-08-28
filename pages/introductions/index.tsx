@@ -18,7 +18,7 @@ const Introductions = () => {
           description={
             "Nesta lição, veremos como falar um pouco sobre nós mesmos."
           }
-          location={"/introductions"}
+          location={"/introductions/introduction"}
         />
 
         <ModulePanel
