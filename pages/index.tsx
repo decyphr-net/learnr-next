@@ -1,11 +1,4 @@
-import {
-  Heading,
-  Stack,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Icon,
-} from "@chakra-ui/core";
+import { Stack } from "@chakra-ui/core";
 import { useTranslation } from "react-i18next";
 import Layout from "../components/Layout";
 import { ModulePanel } from "../components/elements/panels";
@@ -13,19 +6,11 @@ import { ModulePanel } from "../components/elements/panels";
 const IndexPage = () => {
   const { t } = useTranslation("common");
   return (
-    <Layout title="Curso">
-      <Breadcrumb
-        spacing="8px"
-        separator={<Icon color="gray.300" name="chevron-right" />}
-      >
-        <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href="/">Curso</BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
-      <Heading as="h1" size="xl" mt={"1.5%"}>
-        {t("mainheading")}
-      </Heading>
-
+    <Layout
+      crumbs={[{ text: "Curso", location: "/", isCurrent: true }]}
+      headingText={t("mainheading")}
+      title="Curso"
+    >
       <Stack spacing={1}>
         <ModulePanel
           title={"1. Apresentações"}

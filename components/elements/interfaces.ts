@@ -17,3 +17,17 @@ export interface IModulePanelProps {
   description: string;
   location: string;
 }
+
+export interface IHeadingProps {
+  text: string;
+}
+
+export interface ICrumb {
+  text: string;
+  location: string;
+  isCurrent: boolean;
+}
+
+export interface ICrumbsProps {
+  crumbs: Array<ICrumb>;
+}

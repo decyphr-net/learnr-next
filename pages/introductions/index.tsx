@@ -1,33 +1,17 @@
-import {
-  Heading,
-  Stack,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Icon,
-} from "@chakra-ui/core";
+import { Stack } from "@chakra-ui/core";
 import Layout from "../../components/Layout";
 import { ModulePanel } from "../../components/elements/panels";
 
 const Introductions = () => {
   return (
-    <Layout title="Curso | Apresentações">
-      <Breadcrumb
-        spacing="8px"
-        separator={<Icon color="gray.300" name="chevron-right" />}
-      >
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/">Curso</BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href="/introductions/">Apresentações</BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
-      <Heading as="h1" size="xl" mt={"1.5%"}>
-        1. Apresentações
-      </Heading>
-
+    <Layout
+      crumbs={[
+        { text: "Curso", location: "/", isCurrent: false },
+        { text: "Apresentações", location: "introductions", isCurrent: true },
+      ]}
+      headingText="1. Apresentações"
+      title="Curso | Apresentações"
+    >
       <Stack spacing={1}>
         <ModulePanel
           title={"a. Olá! Meu nome é..."}
