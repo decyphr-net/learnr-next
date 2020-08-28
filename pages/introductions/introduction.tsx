@@ -1,8 +1,15 @@
-import { Stack, Text, List, ListItem, ListIcon } from "@chakra-ui/core";
+import { Stack } from "@chakra-ui/core";
 import Layout from "../../components/Layout";
 import { UnitPanel } from "../../components/elements/panels";
+import { TextComponent, ListComponent } from "../../components/unit/text";
 
 const LessonOne = () => {
+  const learningOutcomes: Array<string> = [
+    "Como dizer 'olá'",
+    "Pergunte como alguém está",
+    "Diga a alguém o seu nome",
+    "Responda a essas perguntas quando perguntado",
+  ];
   return (
     <Layout
       crumbs={[
@@ -14,7 +21,7 @@ const LessonOne = () => {
         },
         {
           text: "Introdução à aula",
-          location: "/introductions/meunomee",
+          location: "/introductions/introduction",
           isCurrent: true,
         },
       ]}
@@ -23,22 +30,22 @@ const LessonOne = () => {
     >
       <Stack spacing={1}>
         <UnitPanel title={"i. Introdução à aula"}>
-          <Text mb={"5%"} mt={"5%"}>
+          <TextComponent isFirst>
             Ao longo desta lição, veremos algumas das diferentes maneiras com
             que os falantes de inglês se cumprimentam. Veremos como você pode
             fazer outra pessoa e lhes daremos algumas informações básicas sobre
             você.
-          </Text>
+          </TextComponent>
 
-          <Text mb={"5%"}>
+          <TextComponent>
             Existem algumas razões para isso. Em primeiro lugar, queremos
             começar a ver algumas palavras em inglês! Queremos ver como elas se
             parecem e como soam, e como as frases funcionam no idioma inglês.
             Não apenas isso, mas quando encontramos outros falantes de inglês,
             queremos saber como cumprimentá-los e nos apresentar.
-          </Text>
+          </TextComponent>
 
-          <Text mb={"5%"}>
+          <TextComponent>
             Para isso, precisamos dar uma olhada em como podemos dizer coisas
             como 'oi, tudo bem?' ou 'meu nome é...', e também precisaremos saber
             como responder a essas perguntas ou declarações. E em vez de olhar
@@ -46,32 +53,15 @@ const LessonOne = () => {
             algumas das diferentes coisas que os falantes de inglês podem dizer
             em situações normais do dia a dia, mas também em uma linguagem mais
             formal.
-          </Text>
+          </TextComponent>
 
-          <Text mb={"5%"}>O que vamos aprender:</Text>
+          <TextComponent>O que vamos aprender:</TextComponent>
 
-          <List spacing={3} mb={"5%"}>
-            <ListItem>
-              <ListIcon icon="small-add" color="green.500" />
-              Como dizer 'olá'
-            </ListItem>
-            <ListItem>
-              <ListIcon icon="small-add" color="green.500" />
-              Pergunte como alguém está
-            </ListItem>
-            <ListItem>
-              <ListIcon icon="small-add" color="green.500" />
-              Diga a alguém o seu nome
-            </ListItem>
-            <ListItem>
-              <ListIcon icon="small-add" color="green.500" />
-              Responda a essas perguntas quando perguntado
-            </ListItem>
-          </List>
+          <ListComponent listContents={learningOutcomes} />
 
-          <Text mb={"5%"}>
+          <TextComponent>
             Agora que sabemos o que aprenderemos, vamos começar!
-          </Text>
+          </TextComponent>
         </UnitPanel>
       </Stack>
     </Layout>
