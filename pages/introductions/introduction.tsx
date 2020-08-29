@@ -1,4 +1,5 @@
-import { Stack } from "@chakra-ui/core";
+import NextLink from "next/link";
+import { Stack, Icon, Link } from "@chakra-ui/core";
 import Layout from "../../components/Layout";
 import { UnitPanel } from "../../components/elements/panels";
 import { TextComponent, ListComponent } from "../../components/unit/text";
@@ -64,6 +65,11 @@ const LessonOne = () => {
           </TextComponent>
         </UnitPanel>
       </Stack>
+      <NextLink href="/introductions/ola">
+        <Link m={"auto"}>
+          <Icon name="chevron-right" />
+        </Link>
+      </NextLink>
     </Layout>
   );
 };
