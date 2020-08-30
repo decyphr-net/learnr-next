@@ -8,3 +8,10 @@ export interface ITextComponentProps {
 export interface IListComponentProps {
   listContents: Array<string>;
 }
+
+export interface IPopupExplainerProps {
+  explainerTriggerText: string;
+  explainerHeader: string;
+  literalTranslation: string;
+  space?: boolean;
+}
