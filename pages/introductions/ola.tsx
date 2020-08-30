@@ -91,6 +91,31 @@ const LessonTwo = () => {
             como uma saudação, mesmo em contextos mais formais, como em um
             e-mail para um colega de trabalho ou cliente.
           </TextComponent>
+          <TextComponent>
+            A última forma de dizer 'olá' em inglês por enquanto é a mais
+            informal, que é{" "}
+            <PopupExplainer
+              explainerTriggerText="hey"
+              explainerHeader="Hey"
+              literalTranslation="oi"
+            />
+            .{" "}
+            <PopupExplainer
+              explainerTriggerText="Hey"
+              explainerHeader="Hey"
+              literalTranslation="oi"
+            />{" "}
+            é usado principalmente entre amigos ou colegas familiares, mas ao
+            mesmo tempo, não se preocupe muito se usar em contextos mais
+            formais. No entanto, não usamos{" "}
+            <PopupExplainer
+              explainerTriggerText="hey"
+              explainerHeader="Hey"
+              literalTranslation="oi"
+            />{" "}
+            apenas para dizer olá. Também é usado quando queremos chamar a
+            atenção de alguém, como 'ei'
+          </TextComponent>
         </UnitPanel>
       </Stack>
       <NextLink href="/introductions/ola">
