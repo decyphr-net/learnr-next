@@ -78,7 +78,6 @@ const LessonTwo = () => {
               explainerTriggerText="hello"
               explainerHeader="Hello"
               literalTranslation="olá"
-              space={true}
             />
             muitas vezes possa ser considerado mais formal, é perfeitamente
             normal usar{" "}
@@ -86,7 +85,6 @@ const LessonTwo = () => {
               explainerTriggerText="hi"
               explainerHeader="Hi"
               literalTranslation="oi"
-              space={true}
             />{" "}
             como uma saudação, mesmo em contextos mais formais, como em um
             e-mail para um colega de trabalho ou cliente.

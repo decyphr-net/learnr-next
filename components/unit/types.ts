@@ -13,5 +13,4 @@ export type PopupExplainerProps = {
   explainerTriggerText: string;
   explainerHeader: string;
   literalTranslation: string;
-  space?: boolean;
 };

@@ -17,14 +17,12 @@ export const PopupExplainer = ({
   explainerTriggerText,
   explainerHeader,
   literalTranslation,
-  space,
 }: PopupExplainerProps) => (
   <>
     <Popover placement="top">
       <PopoverTrigger>
         <Text as="span" color={"green.500"} textDecor={"underline"}>
           {explainerTriggerText}
-          <Text as="span">{space ? " " : ""}</Text>
         </Text>
       </PopoverTrigger>
       <DarkMode>
