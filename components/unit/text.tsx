@@ -1,13 +1,13 @@
 import { Text, List, ListItem, ListIcon } from "@chakra-ui/core";
-import { ITextComponentProps, IListComponentProps } from "./interfaces";
+import { TextComponentProps, ListComponentProps } from "./types";
 
-export const TextComponent = ({ children, isFirst }: ITextComponentProps) => (
+export const TextComponent = ({ children, isFirst }: TextComponentProps) => (
   <Text mb={"5%"} mt={isFirst ? "5%" : ""}>
     {children}
   </Text>
 );
 
-export const ListComponent = ({ listContents }: IListComponentProps) => (
+export const ListComponent = ({ listContents }: ListComponentProps) => (
   <List spacing={3} mb={"5%"}>
     {listContents.map((contents: string, index: number) => {
       return (

@@ -1,7 +1,7 @@
 import { Heading } from "@chakra-ui/core";
-import { IHeadingProps } from "./interfaces";
+import { HeadingProps } from "./types";
 
-export const H1 = ({ text }: IHeadingProps) => (
+export const H1 = ({ text }: HeadingProps) => (
   <Heading as="h1" size="xl" mt={"1.5%"}>
     {text}
   </Heading>

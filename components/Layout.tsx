@@ -4,9 +4,9 @@ import { SimpleGrid } from "@chakra-ui/core";
 import Nav from "./sections/navigation/navigationBar";
 import { CourseHeading } from "./sections/pageHeaders/headers";
 import Footer from "./sections/footer/footer";
-import { ILayoutProps } from "./interfaces";
+import { LayoutProps } from "./types";
 
-const Layout = ({ crumbs, headingText, children, title }: ILayoutProps) => (
+const Layout = ({ crumbs, headingText, children, title }: LayoutProps) => (
   <div>
     <Head>
       <title>{title}</title>

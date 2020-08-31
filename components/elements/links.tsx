@@ -1,8 +1,8 @@
 import { Link } from "@chakra-ui/core";
 import { Link as NextLink } from "../../i18n";
-import { INavLinkProps } from "./interfaces";
+import { NavLinkProps } from "./types";
 
-export const NavLink = ({ children, ...props }: INavLinkProps) => {
+export const NavLink = ({ children, ...props }: NavLinkProps) => {
   return (
     <NextLink href={props.to}>
       <Link
