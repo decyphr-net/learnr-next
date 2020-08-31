@@ -1,6 +1,6 @@
-import NextLink from "next/link";
-import { Stack, Icon, Link } from "@chakra-ui/core";
+import { Stack, Flex } from "@chakra-ui/core";
 import Layout from "../../components/Layout";
+import NavChevron from "../../components/sections/navigation/unitNavigation";
 import { UnitPanel } from "../../components/elements/panels";
 import { TextComponent } from "../../components/unit/text";
 import { PopupExplainer } from "../../components/unit/explainer";
@@ -116,13 +116,17 @@ const LessonTwo = () => {
             apenas para dizer olá. Também é usado quando queremos chamar a
             atenção de alguém, como 'ei'
           </TextComponent>
+          <TextComponent>
+            Esse é todo o tempo que vamos gastar com ola por enquanto. Vamos
+            prosseguir e começar a ver mais alguns cumprimentos na próxima
+            unidade
+          </TextComponent>
         </UnitPanel>
       </Stack>
-      <NextLink href="/introductions/ola">
-        <Link m={"auto"}>
-          <Icon name="chevron-right" />
-        </Link>
-      </NextLink>
+      <Flex>
+        <NavChevron location="/introductions/introduction" direction="left" />
+        <NavChevron location="/introductions/introduction" direction="right" />
+      </Flex>
     </Layout>
   );
 };
