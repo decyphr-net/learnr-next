@@ -4,9 +4,9 @@ import {
   BreadcrumbLink,
   Icon,
 } from "@chakra-ui/core";
-import { ICrumbsProps } from "./interfaces";
+import { CrumbsProps } from "./types";
 
-export const Crumbs = ({ crumbs }: ICrumbsProps) => (
+export const Crumbs = ({ crumbs }: CrumbsProps) => (
   <Breadcrumb
     spacing="8px"
     separator={<Icon color="gray.300" name="chevron-right" />}

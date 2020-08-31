@@ -1,12 +1,12 @@
 import { Link } from "../../i18n";
 import { Heading, Box, Text } from "@chakra-ui/core";
-import { IModulePanelProps, IUnitPanelProps } from "./interfaces";
+import { ModulePanelProps, UnitPanelProps } from "./types";
 
 export const ModulePanel = ({
   title,
   description,
   location,
-}: IModulePanelProps) => (
+}: ModulePanelProps) => (
   <Link href={location}>
     <Box
       shadow="md"
@@ -23,7 +23,7 @@ export const ModulePanel = ({
   </Link>
 );
 
-export const UnitPanel = ({ title, children }: IUnitPanelProps) => (
+export const UnitPanel = ({ title, children }: UnitPanelProps) => (
   <Box
     shadow="md"
     borderWidth="1px"

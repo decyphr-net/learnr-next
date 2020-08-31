@@ -11,14 +11,14 @@ import {
   DarkMode,
 } from "@chakra-ui/core";
 import { MdVolumeUp } from "react-icons/md";
-import { IPopupExplainerProps } from "./interfaces";
+import { PopupExplainerProps } from "./types";
 
 export const PopupExplainer = ({
   explainerTriggerText,
   explainerHeader,
   literalTranslation,
   space,
-}: IPopupExplainerProps) => (
+}: PopupExplainerProps) => (
   <>
     <Popover placement="top">
       <PopoverTrigger>
