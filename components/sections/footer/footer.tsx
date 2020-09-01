@@ -1,11 +1,10 @@
-import { Flex, Text, useTheme } from "@chakra-ui/core";
+import { Flex, Text } from "@chakra-ui/core";
 
 const Footer = () => {
-  const theme = useTheme();
   return (
     <Flex
-      bg={theme.colors.gray[800]}
-      w={theme.sizes.full}
+      bg="gray.800"
+      w="full"
       px={5}
       py={4}
       justifyContent="space-between"
@@ -17,7 +16,7 @@ const Footer = () => {
         alignItems="center"
         mx="auto"
       >
-        <Text color={theme.colors.white}>Learnr Copyright 2020</Text>
+        <Text color="white">Learnr Copyright 2020</Text>
       </Flex>
     </Flex>
   );

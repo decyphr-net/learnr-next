@@ -3,7 +3,7 @@
  * the site
  */
 import { useState } from "react";
-import { Box, Flex, Heading, Button } from "@chakra-ui/core";
+import { Box, Flex, Heading } from "@chakra-ui/core";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "../../elements/links";
 
@@ -49,15 +49,6 @@ const Nav = () => {
         <NavLink to="/">{t("home")}</NavLink>
         <NavLink to="/">{t("about")}</NavLink>
         <NavLink to="/">{t("contact")}</NavLink>
-      </Box>
-
-      <Box
-        display={{ xs: show ? "block" : "none", md: "block" }}
-        mt={{ base: 4, md: 0 }}
-      >
-        <Button bg="transparent" border="1px">
-          Create account
-        </Button>
       </Box>
     </Flex>
   );
