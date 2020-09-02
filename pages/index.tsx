@@ -18,9 +18,10 @@ const IndexPage = ({ modules }: ModuleAsProps) => {
           return (
             <ModulePanel
               key={index}
-              title={`${module.id}. ${module.title}`}
+              title={`${module.displayTitle}`}
               description={module.description}
-              location={`/lesson/?moduleId=${module.id}`}
+              location={"/lessons/[moduleId]"}
+              as={`/lessons/${module.id}/`}
             />
           );
         })}

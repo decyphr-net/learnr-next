@@ -1,14 +1,14 @@
 import { PrismaClient, Lesson } from "@prisma/client";
 import { Stack } from "@chakra-ui/core";
-import Layout from "../../components/Layout";
-import { ModulePanel } from "../../components/elements/panels";
+import Layout from "../../../components/Layout";
+import { ModulePanel } from "../../../components/elements/panels";
 
 const LessonList = ({ module }: any) => {
   return (
     <Layout
       crumbs={[
         { text: "Curso", location: "/", isCurrent: false },
-        { text: "Apresentações", location: "/lesson", isCurrent: true },
+        { text: module.title, location: "/lesson", isCurrent: true },
       ]}
       headingText={module.displayTitle}
       title={`Curso | ${module.title}`}
@@ -20,7 +20,8 @@ const LessonList = ({ module }: any) => {
               key={index}
               title={`${lesson.displayTitle}`}
               description={lesson.description}
-              location={"/introductions/"}
+              location={"/lessons/[moduleId]/[lessonId]/"}
+              as={`/lessons/${module.id}/${lesson.id}/`}
             />
           );
         })}
@@ -29,10 +30,10 @@ const LessonList = ({ module }: any) => {
   );
 };
 
-export const getServerSideProps = async ({ query }: any) => {
+export const getServerSideProps = async (context: any) => {
   const prisma = new PrismaClient({ log: ["query"] });
   const module = await prisma.module.findOne({
-    where: { id: +query.moduleId },
+    where: { id: +context.query["id"] },
     include: { lessons: true },
   });
 

@@ -6,8 +6,9 @@ export const ModulePanel = ({
   title,
   description,
   location,
+  as,
 }: ModulePanelProps) => (
-  <Link href={location}>
+  <Link href={location} as={as}>
     <Box
       shadow="md"
       borderWidth="1px"

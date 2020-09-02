@@ -16,6 +16,7 @@ export type ModulePanelProps = {
   title: string;
   description: string;
   location: string;
+  as: string;
 };
 
 export type UnitPanelProps = {

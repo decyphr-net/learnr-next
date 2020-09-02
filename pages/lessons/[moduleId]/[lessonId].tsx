@@ -1,8 +1,9 @@
+import { PrismaClient } from "@prisma/client";
 import { Stack, Flex } from "@chakra-ui/core";
-import Layout from "../../components/Layout";
-import NavChevron from "../../components/sections/navigation/unitNavigation";
-import { UnitPanel } from "../../components/elements/panels";
-import UnitContent from "../../components/unit/content";
+import Layout from "../../../components/Layout";
+import NavChevron from "../../../components/sections/navigation/unitNavigation";
+import { UnitPanel } from "../../../components/elements/panels";
+import UnitContent from "../../../components/unit/content";
 
 const LessonOne = () => {
   return (
@@ -64,6 +65,15 @@ const LessonOne = () => {
       </Flex>
     </Layout>
   );
+};
+
+export const getServerSideProps = async (context: any) => {
+  const prisma = new PrismaClient({ log: ["query"] });
+  const module = await prisma.lesson.findOne({
+    where: { id: +context.query["moduleId"] },
+  });
+
+  return { props: { module } };
 };
 
 export default LessonOne;
