@@ -20,7 +20,7 @@ const IndexPage = ({ modules }: ModuleAsProps) => {
               key={index}
               title={`${module.id}. ${module.title}`}
               description={module.description}
-              location={"/introductions/"}
+              location={`/lesson/?moduleId=${module.id}`}
             />
           );
         })}
