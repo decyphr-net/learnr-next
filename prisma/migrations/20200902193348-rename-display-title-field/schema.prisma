@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -15,7 +15,7 @@ model Module {
   title        String
   displayTitle String?
   description  String
-  lessons      Lesson[]
+  Lesson       Lesson[]
 }
 
 model Lesson {
