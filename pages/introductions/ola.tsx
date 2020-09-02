@@ -2,8 +2,7 @@ import { Stack, Flex } from "@chakra-ui/core";
 import Layout from "../../components/Layout";
 import NavChevron from "../../components/sections/navigation/unitNavigation";
 import { UnitPanel } from "../../components/elements/panels";
-import { TextComponent } from "../../components/unit/text";
-import { PopupExplainer } from "../../components/unit/explainer";
+import UnitContent from "../../components/unit/content";
 
 const LessonTwo = () => {
   return (
@@ -26,18 +25,21 @@ const LessonTwo = () => {
     >
       <Stack spacing={1}>
         <UnitPanel title={"ii. Olá!"}>
+          <UnitContent
+            content={`
           <TextComponent isFirst>
             No idioma inglês, existem várias maneiras de dizer 'olá'.
           </TextComponent>
 
           <TextComponent>
-            O mais comum e <em>mais oficial</em> seria a palavra{" "}
+            O mais comum e{" "}
+            <em onClick={() => createReactElement()}>mais oficial</em> seria a
+            palavra{" "}
             <PopupExplainer
               explainerTriggerText="hello"
               explainerHeader="Hello"
               literalTranslation="olá"
-            />
-            .
+            />.
           </TextComponent>
 
           <TextComponent>
@@ -72,8 +74,7 @@ const LessonTwo = () => {
               explainerTriggerText="hi"
               explainerHeader="Hi"
               literalTranslation="oi"
-            />
-            . Embora{" "}
+            />. Embora{" "}
             <PopupExplainer
               explainerTriggerText="hello"
               explainerHeader="Hello"
@@ -119,6 +120,8 @@ const LessonTwo = () => {
             prosseguir e começar a ver mais alguns cumprimentos na próxima
             unidade
           </TextComponent>
+          `}
+          />
         </UnitPanel>
       </Stack>
       <Flex>

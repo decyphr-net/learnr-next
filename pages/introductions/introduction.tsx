@@ -2,15 +2,9 @@ import { Stack, Flex } from "@chakra-ui/core";
 import Layout from "../../components/Layout";
 import NavChevron from "../../components/sections/navigation/unitNavigation";
 import { UnitPanel } from "../../components/elements/panels";
-import { TextComponent, ListComponent } from "../../components/unit/text";
+import UnitContent from "../../components/unit/content";
 
 const LessonOne = () => {
-  const learningOutcomes: Array<string> = [
-    "Como dizer 'olá'",
-    "Pergunte como alguém está",
-    "Diga a alguém o seu nome",
-    "Responda a essas perguntas quando perguntado",
-  ];
   return (
     <Layout
       crumbs={[
@@ -31,7 +25,8 @@ const LessonOne = () => {
     >
       <Stack spacing={1}>
         <UnitPanel title={"i. Introdução à aula"}>
-          <TextComponent isFirst>
+          <UnitContent
+            content={`<TextComponent isFirst>
             Ao longo desta lição, veremos algumas das diferentes maneiras com
             que os falantes de inglês se cumprimentam. Veremos como você pode
             fazer outra pessoa e lhes daremos algumas informações básicas sobre
@@ -58,11 +53,10 @@ const LessonOne = () => {
 
           <TextComponent>O que vamos aprender:</TextComponent>
 
-          <ListComponent listContents={learningOutcomes} />
-
           <TextComponent>
             Agora que sabemos o que aprenderemos, vamos começar!
-          </TextComponent>
+          </TextComponent>`}
+          />
         </UnitPanel>
       </Stack>
       <Flex>
