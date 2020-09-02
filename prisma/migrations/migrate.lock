@@ -1,3 +1,5 @@
 # Prisma Migrate lockfile v1
 
 20200902124951-module
+20200902141615-make-type-and-number-optional
+20200902142044-type-and-number-adjustments

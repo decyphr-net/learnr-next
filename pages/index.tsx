@@ -18,7 +18,7 @@ const IndexPage = ({ modules }: IndexProps) => {
           return (
             <ModulePanel
               key={index}
-              title={`${module.id}. ${module.title}`}
+              title={`${module.number}. ${module.title}`}
               description={module.description}
               location={"/introductions/"}
             />
@@ -31,7 +31,7 @@ const IndexPage = ({ modules }: IndexProps) => {
 
 export const getServerSideProps = async () => {
   const prisma = new PrismaClient({ log: ["query"] });
-  const modules = await prisma.module.findMany();
+  const modules = await prisma.module.findMany({ where: { type: "module" } });
 
   return { props: { modules } };
 };
