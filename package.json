@@ -13,6 +13,7 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "@prisma/client": "^2.6.0",
     "emotion-theming": "^10.0.27",
     "next": "latest",
     "next-i18next": "^6.0.2",
@@ -23,6 +24,7 @@
     "sass": "^1.26.10"
   },
   "devDependencies": {
+    "@prisma/cli": "^2.6.0",
     "@types/enzyme": "^3.10.5",
     "@types/jest": "^26.0.10",
     "@types/node": "^12.12.21",

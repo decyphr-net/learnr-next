@@ -14,3 +14,7 @@ export type PopupExplainerProps = {
   explainerHeader: string;
   literalTranslation: string;
 };
+
+export type UnitContentProps = {
+  content: string;
+};
