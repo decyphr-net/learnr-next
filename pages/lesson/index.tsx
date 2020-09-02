@@ -1,11 +1,9 @@
-import { PrismaClient, Module, Lesson } from "@prisma/client";
+import { PrismaClient, Lesson } from "@prisma/client";
 import { Stack } from "@chakra-ui/core";
 import Layout from "../../components/Layout";
 import { ModulePanel } from "../../components/elements/panels";
-import { LessonAsProps } from "../types";
 
-const Introductions = ({ module }: any) => {
-  console.log(module);
+const LessonList = ({ module }: any) => {
   return (
     <Layout
       crumbs={[
@@ -20,7 +18,7 @@ const Introductions = ({ module }: any) => {
           return (
             <ModulePanel
               key={index}
-              title={`${lesson.title}`}
+              title={`${lesson.displayTitle}`}
               description={lesson.description}
               location={"/introductions/"}
             />
@@ -41,4 +39,4 @@ export const getServerSideProps = async ({ query }: any) => {
   return { props: { module } };
 };
 
-export default Introductions;
+export default LessonList;
