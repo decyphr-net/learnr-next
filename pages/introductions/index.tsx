@@ -1,8 +1,10 @@
+import { PrismaClient, Lesson } from "@prisma/client";
 import { Stack } from "@chakra-ui/core";
 import Layout from "../../components/Layout";
 import { ModulePanel } from "../../components/elements/panels";
+import { LessonAsProps } from "../types";
 
-const Introductions = () => {
+const Introductions = ({ lessons }: LessonAsProps) => {
   return (
     <Layout
       crumbs={[
@@ -13,43 +15,28 @@ const Introductions = () => {
       title="Curso | Apresentações"
     >
       <Stack spacing={1}>
-        <ModulePanel
-          title={"a. Olá! Meu nome é..."}
-          description={
-            "Nesta lição, veremos como falar um pouco sobre nós mesmos."
-          }
-          location={"/introductions/introduction"}
-        />
-
-        <ModulePanel
-          title={"b. Prazer em conhecê-lo!"}
-          description={"Nesta lição, veremos como nos apresentar."}
-          location={"/introductions"}
-        />
-        <ModulePanel
-          title={"c. Ser e Estar"}
-          description={
-            "Nesta lição, aprenderemos como nos descrever usando 'ser' e 'estar'."
-          }
-          location={"/introductions"}
-        />
-        <ModulePanel
-          title={"d. Quantos anos você tem?"}
-          description={
-            "Nesta lição, aprenderemos como falar sobre idade. Veremos alguns números, bem como meses e dias da semana."
-          }
-          location={"/introductions"}
-        />
-        <ModulePanel
-          title={"e. Contrações"}
-          description={
-            "Nesta lição, aprenderemos como usar as contrações comuns no idioma inglês."
-          }
-          location={"/introductions"}
-        />
+        {lessons.map((lesson: Lesson, index: number) => {
+          return (
+            <ModulePanel
+              key={index}
+              title={`${lesson.title}`}
+              description={lesson.description}
+              location={"/introductions/"}
+            />
+          );
+        })}
       </Stack>
     </Layout>
   );
+};
+
+export const getServerSideProps = async ({ query }: any) => {
+  const prisma = new PrismaClient({ log: ["query"] });
+  const lessons = await prisma.lesson.findMany({
+    where: { moduleId: +query.moduleId },
+  });
+
+  return { props: { lessons } };
 };
 
 export default Introductions;

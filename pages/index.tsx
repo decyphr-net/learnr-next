@@ -3,9 +3,9 @@ import { Stack } from "@chakra-ui/core";
 import { useTranslation } from "react-i18next";
 import Layout from "../components/Layout";
 import { ModulePanel } from "../components/elements/panels";
-import { IndexProps } from "./types";
+import { ModuleAsProps } from "./types";
 
-const IndexPage = ({ modules }: IndexProps) => {
+const IndexPage = ({ modules }: ModuleAsProps) => {
   const { t } = useTranslation("common");
   return (
     <Layout
@@ -18,7 +18,7 @@ const IndexPage = ({ modules }: IndexProps) => {
           return (
             <ModulePanel
               key={index}
-              title={`${module.number}. ${module.title}`}
+              title={`${module.id}. ${module.title}`}
               description={module.description}
               location={"/introductions/"}
             />
@@ -31,7 +31,7 @@ const IndexPage = ({ modules }: IndexProps) => {
 
 export const getServerSideProps = async () => {
   const prisma = new PrismaClient({ log: ["query"] });
-  const modules = await prisma.module.findMany({ where: { type: "module" } });
+  const modules = await prisma.module.findMany();
 
   return { props: { modules } };
 };
