@@ -8,7 +8,7 @@ const LessonList = ({ module }: any) => {
     <Layout
       crumbs={[
         { text: "Curso", location: "/", isCurrent: false },
-        { text: module.title, location: "/lesson", isCurrent: true },
+        { text: module.title, location: "/lessons", isCurrent: true },
       ]}
       headingText={module.displayTitle}
       title={`Curso | ${module.title}`}
@@ -31,9 +31,10 @@ const LessonList = ({ module }: any) => {
 };
 
 export const getServerSideProps = async (context: any) => {
+  console.log(context.query["moduleId"]);
   const prisma = new PrismaClient({ log: ["query"] });
   const module = await prisma.module.findOne({
-    where: { id: +context.query["id"] },
+    where: { id: +context.query["moduleId"] },
     include: { lessons: true },
   });
 

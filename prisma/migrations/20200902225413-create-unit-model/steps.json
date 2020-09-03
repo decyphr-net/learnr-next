@@ -1,0 +1,145 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateModel",
+      "model": "Unit"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Unit",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Unit",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Unit",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Unit",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Unit",
+      "field": "title",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Unit",
+      "field": "displayTitle",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Unit",
+      "field": "contents",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Unit",
+      "field": "lesson",
+      "type": "Lesson",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Unit",
+          "field": "lesson"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Unit",
+          "field": "lesson"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[lessonId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Unit",
+          "field": "lesson"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Unit",
+      "field": "lessonId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Module",
+      "field": "displayTitle",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Lesson",
+      "field": "units",
+      "type": "Unit",
+      "arity": "List"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Lesson",
+      "field": "displayTitle",
+      "arity": "Required"
+    }
+  ]
+}
