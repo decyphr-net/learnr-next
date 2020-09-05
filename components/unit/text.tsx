@@ -16,7 +16,7 @@ export const TextComponent = ({ children, isFirst }: TextComponentProps) => (
   </Text>
 );
 
-export const HeadsUpText = ({ children }: any) => (
+export const HeadsUpText = ({ children, headingText = "Lembre-se:" }: any) => (
   <Alert
     status="warning"
     mt="5%"
@@ -24,11 +24,10 @@ export const HeadsUpText = ({ children }: any) => (
     flexDirection="column"
     justifyContent="center"
     textAlign="center"
-    height="275px"
   >
     <AlertIcon size="40px" mr={0} />
     <AlertTitle mt={4} mb={1} fontSize="lg">
-      Lembre-se:
+      {headingText}
     </AlertTitle>
     <AlertDescription maxWidth="750px">{children}</AlertDescription>
   </Alert>
