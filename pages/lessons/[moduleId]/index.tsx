@@ -31,7 +31,6 @@ const LessonList = ({ module }: any) => {
 };
 
 export const getServerSideProps = async (context: any) => {
-  console.log(context.query["moduleId"]);
   const prisma = new PrismaClient({ log: ["query"] });
   const module = await prisma.module.findOne({
     where: { id: +context.query["moduleId"] },

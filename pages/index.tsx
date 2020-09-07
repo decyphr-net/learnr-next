@@ -1,11 +1,11 @@
 import { PrismaClient, Module } from "@prisma/client";
 import { Stack } from "@chakra-ui/core";
 import { useTranslation } from "react-i18next";
+import getSessionOrRedirect from "../utils/auth/session";
 import Layout from "../components/Layout";
 import { ModulePanel } from "../components/elements/panels";
-import { ModuleAsProps } from "./types";
 
-const IndexPage = ({ modules }: ModuleAsProps) => {
+const IndexPage = (props: any) => {
   const { t } = useTranslation("common");
   return (
     <Layout
@@ -14,7 +14,7 @@ const IndexPage = ({ modules }: ModuleAsProps) => {
       title="Curso"
     >
       <Stack spacing={1}>
-        {modules.map((module: Module, index: number) => {
+        {props.modules.map((module: Module, index: number) => {
           return (
             <ModulePanel
               key={index}
@@ -30,11 +30,13 @@ const IndexPage = ({ modules }: ModuleAsProps) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({ req, res }: any) => {
   const prisma = new PrismaClient({ log: ["query"] });
   const modules = await prisma.module.findMany();
 
-  return { props: { modules } };
+  let session: any = await getSessionOrRedirect(req, res);
+
+  return { props: { modules, session } };
 };
 
 export default IndexPage;
