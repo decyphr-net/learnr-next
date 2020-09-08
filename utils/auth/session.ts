@@ -10,7 +10,7 @@ const getSessionOrRedirect = async (req: any, res: any) => {
     const session = (await auth0.getSession(req as NextApiRequest)) || {};
     if (!session) {
       res.writeHead(302, {
-        Location: "/api/login",
+        Location: "/api/accounts/login",
       });
       res.end();
       return;
