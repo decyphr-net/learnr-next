@@ -13,13 +13,19 @@
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true,
     "target": "esnext",
     "baseUrl": "./",
     "paths": {
       "@components/*": ["./components/*"]
-    }
+    },
+    "strict": false
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "i18n.js", "config/setup.js"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "i18n.js",
+    "config/setup.js",
+    "components/unit/content.jsx"
+  ]
 }
