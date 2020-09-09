@@ -9,7 +9,7 @@
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "postbuild": "next-on-netlify"
+    "postbuild": "next-on-netlify && prisma generate"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^0.16.0",
@@ -20,7 +20,6 @@
     "@types/twilio-video": "^2.7.0",
     "emotion-theming": "^10.0.27",
     "next": "latest",
-    "next-i18next": "^6.0.2",
     "next-on-netlify": "^2.4.0",
     "node-fetch": "^2.6.1",
     "react": "^16.12.0",
