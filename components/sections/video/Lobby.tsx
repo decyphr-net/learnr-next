@@ -3,7 +3,7 @@ const Lobby = ({
   handleUsernameChange,
   roomName,
   handleRoomNameChange,
-}) => {
+}: any) => {
   return (
     <form>
       <h2>Enter a room</h2>
