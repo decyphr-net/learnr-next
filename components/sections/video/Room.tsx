@@ -17,7 +17,7 @@ const Room = ({ roomName, token, handleLogout }) => {
       );
     };
     connect(token, {
-      name: roomName,
+      name: "room",
     }).then((room) => {
       setRoom(room);
       room.on("participantConnected", participantConnected);
