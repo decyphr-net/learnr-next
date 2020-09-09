@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { Participant as TwilioParticipant } from "twilio-video";
+import {
+  Participant as TwilioParticipant,
+  AudioTrackPublication,
+} from "twilio-video";
 
 type ParticipantProps = {
   participant: TwilioParticipant;
@@ -14,7 +17,7 @@ const Participant = ({ participant }: ParticipantProps) => {
 
   const trackpubsToTracks = (trackMap) =>
     Array.from(trackMap.values())
-      .map((publication) => publication.track)
+      .map((publication: AudioTrackPublication) => publication.track)
       .filter((track) => track !== null);
 
   useEffect(() => {

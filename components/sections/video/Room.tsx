@@ -3,6 +3,7 @@ import {
   connect,
   Room as TwilioRoom,
   Participant as TwilioParticipant,
+  LocalAudioTrackPublication,
 } from "twilio-video";
 import Participant from "./Participants";
 import styles from "./styles.module.scss";
@@ -40,7 +41,7 @@ const Room = ({ roomName, token }: RoomProps) => {
       setRoom((currentRoom: TwilioRoom) => {
         if (currentRoom && currentRoom.localParticipant.state === "connected") {
           currentRoom.localParticipant.tracks.forEach(function (
-            trackPublication
+            trackPublication: LocalAudioTrackPublication
           ) {
             trackPublication.track.stop();
           });
