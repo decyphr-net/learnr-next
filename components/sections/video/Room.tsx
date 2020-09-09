@@ -1,24 +1,33 @@
 import { useState, useEffect } from "react";
-import { connect } from "twilio-video";
+import {
+  connect,
+  Room as TwilioRoom,
+  Participant as TwilioParticipant,
+} from "twilio-video";
 import Participant from "./Participants";
 
-const Room = ({ roomName, token, handleLogout }) => {
-  const [room, setRoom] = useState(null);
-  const [participants, setParticipants] = useState([]);
+type RoomProps = {
+  roomName: string;
+  token: string;
+};
+
+const Room = ({ roomName, token }: RoomProps) => {
+  const [room, setRoom] = useState<TwilioRoom>(new TwilioRoom());
+  const [participants, setParticipants] = useState<TwilioParticipant[]>([]);
 
   useEffect(() => {
-    const participantConnected = (participant) => {
+    const participantConnected = (participant: TwilioParticipant) => {
       setParticipants((prevParticipants) => [...prevParticipants, participant]);
     };
 
-    const participantDisconnected = (participant) => {
+    const participantDisconnected = (participant: TwilioParticipant) => {
       setParticipants((prevParticipants) =>
         prevParticipants.filter((p) => p !== participant)
       );
     };
     connect(token, {
       name: "room",
-    }).then((room) => {
+    }).then((room: TwilioRoom) => {
       setRoom(room);
       room.on("participantConnected", participantConnected);
       room.on("participantDisconnected", participantDisconnected);
@@ -27,7 +36,7 @@ const Room = ({ roomName, token, handleLogout }) => {
     });
 
     return () => {
-      setRoom((currentRoom) => {
+      setRoom((currentRoom: TwilioRoom) => {
         if (currentRoom && currentRoom.localParticipant.state === "connected") {
           currentRoom.localParticipant.tracks.forEach(function (
             trackPublication
@@ -50,7 +59,6 @@ const Room = ({ roomName, token, handleLogout }) => {
   return (
     <div className="room">
       <h2>Room: {roomName}</h2>
-      <button onClick={handleLogout}>Log out</button>
       <div className="local-participant">
         {room ? (
           <Participant
