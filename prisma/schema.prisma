@@ -6,6 +6,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+generator photon {
+  provider      = "photonjs"
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
+}
+
 generator client {
   provider = "prisma-client-js"
 }
