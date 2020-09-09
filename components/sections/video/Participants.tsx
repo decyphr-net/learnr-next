@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import { Participant as TwilioParticipant } from "twilio-video";
 
-const Participant = ({ participant }) => {
+type ParticipantProps = {
+  participant: TwilioParticipant;
+};
+
+const Participant = ({ participant }: ParticipantProps) => {
   const [videoTracks, setVideoTracks] = useState([]);
   const [audioTracks, setAudioTracks] = useState([]);
 
