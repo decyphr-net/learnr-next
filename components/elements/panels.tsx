@@ -1,4 +1,4 @@
-import { Link } from "../../i18n";
+import Link from "next/link";
 import { Heading, Box, Text } from "@chakra-ui/core";
 import { ModulePanelProps, UnitPanelProps } from "./types";
 
