@@ -1,16 +1,14 @@
 import { PrismaClient, Module } from "@prisma/client";
 import { Stack } from "@chakra-ui/core";
-import { useTranslation } from "react-i18next";
 import getSessionOrRedirect from "../utils/auth/session";
 import Layout from "../components/Layout";
 import { ModulePanel } from "../components/elements/panels";
 
 const IndexPage = (props: any) => {
-  const { t } = useTranslation("common");
   return (
     <Layout
       crumbs={[{ text: "Curso", location: "/", isCurrent: true }]}
-      headingText={t("mainheading")}
+      headingText="Curso"
       title="Curso"
     >
       <Stack spacing={1}>
