@@ -5,6 +5,7 @@ import {
   Participant as TwilioParticipant,
 } from "twilio-video";
 import Participant from "./Participants";
+import styles from "./styles.module.scss";
 
 type RoomProps = {
   roomName: string;
@@ -12,7 +13,7 @@ type RoomProps = {
 };
 
 const Room = ({ roomName, token }: RoomProps) => {
-  const [room, setRoom] = useState<TwilioRoom>(new TwilioRoom());
+  const [room, setRoom] = useState<TwilioRoom>(null);
   const [participants, setParticipants] = useState<TwilioParticipant[]>([]);
 
   useEffect(() => {
@@ -59,7 +60,8 @@ const Room = ({ roomName, token }: RoomProps) => {
   return (
     <div className="room">
       <h2>Room: {roomName}</h2>
-      <div className="local-participant">
+      <div className="remote-participants">{remoteParticipants}</div>
+      <div className={`local-participant ${styles.localParticipant}`}>
         {room ? (
           <Participant
             key={room.localParticipant.sid}
@@ -69,8 +71,6 @@ const Room = ({ roomName, token }: RoomProps) => {
           ""
         )}
       </div>
-      <h3>Remote Participants</h3>
-      <div className="remote-participants">{remoteParticipants}</div>
     </div>
   );
 };

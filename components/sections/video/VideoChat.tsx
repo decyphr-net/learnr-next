@@ -15,16 +15,12 @@ const VideoChat = (props: any) => {
     setRoomName(event.target.value);
   }, []);
 
-  const handleLogout = useCallback(() => {
-    setToken(null);
-  }, []);
-
   let render;
 
   if (token) {
     render = (
       <div>
-        <Room roomName={roomName} token={token} handleLogout={handleLogout} />
+        <Room roomName={roomName} token={token} />
       </div>
     );
   } else {
