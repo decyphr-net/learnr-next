@@ -1,7 +1,7 @@
 [build]
   command = "mkdir public && npm run build"
-  functions = "functions/"
-  publish = "public/"
+  functions = "out_functions"
+  publish = "out_publish"
   
 [build.environment]
   # Fix to ensure the Prisma binary is packaged with the lambda function
