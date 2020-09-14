@@ -9,11 +9,7 @@ const getSessionOrRedirect = async (req: any, res: any) => {
   if (typeof window === "undefined") {
     const session = (await auth0.getSession(req as NextApiRequest)) || {};
     if (!session) {
-      res.writeHead(302, {
-        Location: "/api/accounts/login",
-      });
-      res.end();
-      return;
+      console.log("Not logged in");
     }
 
     return session;
