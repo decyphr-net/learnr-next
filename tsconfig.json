@@ -16,7 +16,8 @@
     "target": "esnext",
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["./components/*"]
+      "@components/*": ["./components/*"],
+      "@utils/*": ["./utils/*"]
     },
     "strict": false
   },
