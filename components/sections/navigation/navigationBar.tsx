@@ -47,6 +47,7 @@ const Nav = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/">About</NavLink>
         <NavLink to="/">Contact</NavLink>
+        <NavLink to="/api/accounts/login">Login</NavLink>
       </Box>
     </Flex>
   );
